@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "conio.h": "c",
+    "parser.h": "c",
+    "c14n.h": "c",
+    "xmlreader.h": "c",
+    "stdio.h": "c",
+    "tree.h": "c",
+    "string.h": "c",
+    "windows.h": "c",
+    "dirent.h": "c"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "version": 4,
+  "configurations": [{
+    "name": "Win32",
+    "includePath": [
+      "${workspaceFolder}",
+      "${workspaceFolder}\\include",
+      "C:\\mingw\\include"
+    ],
+    "defines": [
+      "_DEBUG",
+      "UNICODE"
+    ],
+    "compilerPath": "C:\\mingw\\bin\\gcc.exe",
+    "intelliSenseMode": "gcc-x64",
+    "browse": {
+      "path": [
+        "${workspaceFolder}"
+      ],
+      "limitSymbolsToIncludedHeaders": true,
+      "databaseFilename": ""
+    }
+  }]
+}
