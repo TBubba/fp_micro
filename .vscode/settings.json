@@ -8,6 +8,9 @@
     "tree.h": "c",
     "string.h": "c",
     "windows.h": "c",
-    "dirent.h": "c"
+    "dirent.h": "c",
+    "entities.h": "c",
+    "xml_util.h": "c",
+    "unistd.h": "c"
   }
 }

@@ -1,8 +1,10 @@
-#include <stdio.h>
 #include <dirent.h>
+#include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 #include <libxml/parser.h>
+
+#include "xml_util.h"
 
 struct dirent *get_next_file(DIR *dir)
 {

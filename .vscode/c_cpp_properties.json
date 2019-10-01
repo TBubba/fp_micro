@@ -4,14 +4,14 @@
     "name": "Win32",
     "includePath": [
       "${workspaceFolder}",
-      "${workspaceFolder}\\include",
-      "C:\\mingw\\include"
+      "${workspaceFolder}/include",
+      "C:/mingw/include"
     ],
     "defines": [
       "_DEBUG",
       "UNICODE"
     ],
-    "compilerPath": "C:\\mingw\\bin\\gcc.exe",
+    "compilerPath": "C:/mingw/bin/gcc.exe",
     "intelliSenseMode": "gcc-x64",
     "browse": {
       "path": [

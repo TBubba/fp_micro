@@ -4,17 +4,8 @@
     {
       "label": "build",
       "type": "shell",
-      "command": "C:\\mingw\\bin\\gcc.exe",
-      "args": [
-        "-g",
-        "-Iinclude",
-        "${workspaceFolder}\\src\\main.c",
-        "${workspaceFolder}\\bin\\libxml.a",
-        "-o",
-        "${workspaceFolder}\\out\\fp_micro.exe",
-        "-Lbin",
-        "-lws2_32"
-      ],
+      "command": "make",
+      "args": [],
       "group": {
         "kind": "build",
         "isDefault": true

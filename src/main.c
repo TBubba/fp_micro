@@ -1,12 +1,13 @@
 #include <conio.h>
+#include <dirent.h>
 #include <stdio.h>
-#include <string.h>
 #include <libxml/parser.h>
 
+#include "xml_util.h"
+#include "platforms.h"
+#include "game_launcher.h"
+
 #include "os.c"
-#include "xml_util.c"
-#include "platforms.c"
-#include "game_launcher.c"
 
 // @NOTES:
 // * The game doesn't seem to get proxied properly when launched from a command prompt (unless it's in debug mode for some reason?)

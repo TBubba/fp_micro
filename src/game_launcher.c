@@ -1,10 +1,8 @@
-#include <conio.h>
-#include <stdio.h>
 #include <string.h>
-#include <unistd.h>
 #include <libxml/parser.h>
-
 #include <windows.h>
+
+#include "xml_util.h"
 
 /** Start a new process with a command. */
 void start_process(char *command)
@@ -54,7 +52,7 @@ char *replace_application_path(char *applicationPath, char *platform)
 }
 
 /** Create a command line string that will launch a game. */
-char *create_command(char *buffer, char *fp_path, char *filename, char *args)
+void create_command(char* buffer, char* fp_path, char* filename, char* args)
 {
   char *escFilename = NULL, *escArgs = NULL;
 
@@ -78,7 +76,6 @@ char *create_command(char *buffer, char *fp_path, char *filename, char *args)
   // }
   // Combine and return
   sprintf(buffer, "\"%s\\%s\" %s", fp_path, escFilename, escArgs);
-  return buffer;
 }
 
 /** Launch a game. */

@@ -1,3 +1,6 @@
+#ifndef __FPM_OS__
+#define __FPM_OS__
+
 /**
  * Define more uniform macros for checking which OS this is compiled for.
  * 
@@ -14,4 +17,6 @@
     #define OS_UNIX 1
 #else
     #define OS_UNKNOWN
+#endif
+
 #endif
