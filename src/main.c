@@ -23,7 +23,8 @@ void wait_for_input()
 int main(int argc, char **argv)
 {
   xmlNode *game;
-  char *target_field, *target_value, fp_path[1024] = {0};
+  platCol *collection;
+  char *target_field, *target_value, *fp_path;
 
   // Extract command line arguments
   if (argc < 3) {
@@ -43,24 +44,31 @@ int main(int argc, char **argv)
   target_field = argv[1];
   target_value = argv[2];
   // Get the Flashpoint path
-  if (get_fp_path(fp_path, sizeof(fp_path)) == NULL) {
+  fp_path = get_fp_path();
+  if (fp_path == NULL) {
     printf("Error: Failed to get the flashpoint path\n");
     return 0;
   }
   printf("%s\n", fp_path);
-  // Look for the game
-  printf("Looking for the first game where:\n");
-  printf("  \"%s\" = \"%s\"\n", target_field, target_value);
-  game = find_game(fp_path, target_field, target_value);
-  if (game) {
-    printf("Game found!\n");
-    printf("Game Meta (partial):\n");
-    printf("  Title: %s\n", get_node_value(game, "Title"));
-    printf("  ID:    %s\n", get_node_value(game, "ID"));
-    // Launch it
-    launch_game(game, fp_path);
+  // Parse platform XMLs
+  collection = load_platforms(fp_path);
+  if (collection != NULL) {
+    printf("Looking for the first game where:\n");
+    printf("  \"%s\" = \"%s\"\n", target_field, target_value);
+    // Look for game in platforms
+    game = find_game(collection, target_field, target_value);
+    if (game) {
+      printf("Game found!\n");
+      printf("Game Meta (partial):\n");
+      printf("  Title: %s\n", get_node_value(game, "Title"));
+      printf("  ID:    %s\n", get_node_value(game, "ID"));
+      // Launch it
+      launch_game(game, fp_path);
+    } else {
+      printf("Game not found.\n");
+    }
   } else {
-    printf("Game not found.\n");
+      printf("Failed to load or parse platform XMLs.\n");
   }
   wait_for_input();
 }

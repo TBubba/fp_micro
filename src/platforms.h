@@ -1,14 +1,16 @@
 #ifndef __FPM_PLATFORMS__
 #define __FPM_PLATFORMS__
 
-struct dirent *get_next_file(DIR *dir);
+typedef struct _platform platform;
+typedef platform *platformPtr;
 
-xmlNode *get_first_game(xmlNode *node);
+typedef struct _platCol platCol;
+typedef platCol *platColPtr;
 
-xmlNode *get_next_game(xmlNode *node);
+char *get_fp_path();
 
-char *get_fp_path(char *buffer, int size);
+platCol *load_platforms(char *fp_path);
 
-xmlNode *find_game(char *fp_path, char *field, char *value);
+xmlNode *find_game(platCol *platforms, char *field, char *value);
 
 #endif
